@@ -109,6 +109,7 @@ public class TeacherController {
     // 获取讲师信息
     @ApiOperation("获取讲师信息")
     @GetMapping("get/{id}")
+    @CrossOrigin
     public Result getTeacher(@PathVariable Integer id){
         Teacher teacher = teacherService.getById(id);
         if(teacher == null) return Result.fail("讲师不存在");
